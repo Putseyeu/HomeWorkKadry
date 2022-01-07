@@ -7,26 +7,7 @@ using System.Threading.Tasks;
 namespace HomeWorkKadry
 {
     class Program
-    {
-        //        Будет 2 массива: 1) фио 2) должность.
-
-        //Описать функцию заполнения массивов досье, функцию форматированного вывода,
-        //функцию поиска по фамилии и функцию удаления досье.
-
-        //Функция расширяет уже имеющийся массив на 1 и дописывает туда новое значение.
-
-        //Программа должна быть с меню, которое содержит пункты:
-
-        //1) добавить досье
-
-        //2) вывести все досье(в одну строку через “-” фио и должность с порядковым номером в начале)
-
-        //3) удалить досье
-
-        //4) поиск по фамилии
-
-        //5) выход
-
+    {        
         static void Main(string[] args)
         {
             string[] listName = new string[0];
@@ -94,7 +75,6 @@ namespace HomeWorkKadry
         }
 
         static void ShowDossier(string[] listName, string[] listOfProfessions)
-
         {
             for (int i = 0; i < listName.Length; i++)
             {
@@ -117,7 +97,6 @@ namespace HomeWorkKadry
                 tempListName[i - 1] = listName[i];
             }
             listName = tempListName;
-
         }
 
         static void DeleteProfessions(ref string[] listOfProfessions, int deleteIndex)
@@ -135,6 +114,7 @@ namespace HomeWorkKadry
             }
             listOfProfessions = tempListOfProfessions;
         }
+
         static void SearchSurname (string[] listName, string[] listOfProfessions)
         {
             Console.WriteLine("Введите фамилию для поиска:");
@@ -152,7 +132,6 @@ namespace HomeWorkKadry
             {
                 Console.WriteLine($"Особа с фамилией {surname} досье не найдена.");
             }
-
         }
     }
 }
