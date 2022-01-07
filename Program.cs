@@ -47,22 +47,17 @@ namespace HomeWorkKadry
         static void AddListName(ref string[] listName, ref string[] listOfProfessions)
         {
             string[] tempListName = new string[listName.Length + 1];
+            string[] tempListOfProfessions = new string[listOfProfessions.Length + 1];
 
             for (int i = 0; i < listName.Length; i++)
             {
                 tempListName[i] = listName[i];
+                tempListOfProfessions[i] = listOfProfessions[i];
             }
 
             Console.WriteLine("Добавитье ФИО в досье.");
             tempListName[tempListName.Length - 1] = Console.ReadLine();
             listName = tempListName;
-
-            string[] tempListOfProfessions = new string[listOfProfessions.Length + 1];
-
-            for (int i = 0; i < listOfProfessions.Length; i++)
-            {
-                tempListOfProfessions[i] = listOfProfessions[i];
-            }
 
             Console.WriteLine("Добавитье профессию в досье.");
             tempListOfProfessions[tempListOfProfessions.Length - 1] = Console.ReadLine();
@@ -81,29 +76,21 @@ namespace HomeWorkKadry
         static void DeleteName(ref string[] listName, ref string[] listOfProfessions, int deleteIndex)
         {
             string[] tempListName = new string[listName.Length - 1];
+            string[] tempListOfProfessions = new string[listOfProfessions.Length - 1];
 
             for (int i = 0; i < deleteIndex; i++)
             {
                 tempListName[i] = listName[i];
+                tempListOfProfessions[i] = listOfProfessions[i];
             }
 
             for (int i = deleteIndex + 1; i < listName.Length; i++)
             {
                 tempListName[i - 1] = listName[i];
-            }
-            listName = tempListName;
-
-            string[] tempListOfProfessions = new string[listOfProfessions.Length - 1];
-
-            for (int i = 0; i < deleteIndex; i++)
-            {
-                tempListOfProfessions[i] = listOfProfessions[i];
-            }
-
-            for (int i = deleteIndex + 1; i < listOfProfessions.Length; i++)
-            {
                 tempListOfProfessions[i - 1] = listOfProfessions[i];
             }
+
+            listName = tempListName;
             listOfProfessions = tempListOfProfessions;
         }        
 
