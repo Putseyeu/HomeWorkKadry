@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HomeWorkKadry
 {
     class Program
-    {        
+    {
         static void Main(string[] args)
         {
             string[] listName = new string[0];
@@ -27,8 +27,8 @@ namespace HomeWorkKadry
                 switch (userInput)
                 {
                     case "1":
-                        AddListName(ref listName);
-                        AddListOfProfessions(ref listOfProfessions);
+                        AddListName(ref listName, ref listOfProfessions);
+                        
                         break;
                     case "2":
                         ShowDossier(listName, listOfProfessions);
@@ -36,17 +36,16 @@ namespace HomeWorkKadry
                     case "3":
                         Console.WriteLine("Введите порядкой номер  досье для удаления");
                         int deleteIndex = Convert.ToInt32(Console.ReadLine()) - 1;
-                        DeleteName(ref listName, deleteIndex);
-                        DeleteProfessions(ref listOfProfessions, deleteIndex);
+                        DeleteName(ref listName, ref listOfProfessions, deleteIndex);                        
                         break;
-                    case "4":                     
-                        SearchSurname (listName, listOfProfessions);
+                    case "4":
+                        SearchSurname(listName, listOfProfessions);
                         break;
                 }
             }
         }
 
-        static void AddListName(ref string[] listName)
+        static void AddListName(ref string[] listName, ref string[] listOfProfessions)
         {
             string[] tempListName = new string[listName.Length + 1];
 
@@ -58,10 +57,7 @@ namespace HomeWorkKadry
             Console.WriteLine("Добавитье ФИО в досье.");
             tempListName[tempListName.Length - 1] = Console.ReadLine();
             listName = tempListName;
-        }
 
-        static void AddListOfProfessions(ref string[] listOfProfessions)
-        {
             string[] tempListOfProfessions = new string[listOfProfessions.Length + 1];
 
             for (int i = 0; i < listOfProfessions.Length; i++)
@@ -72,7 +68,7 @@ namespace HomeWorkKadry
             Console.WriteLine("Добавитье профессию в досье.");
             tempListOfProfessions[tempListOfProfessions.Length - 1] = Console.ReadLine();
             listOfProfessions = tempListOfProfessions;
-        }
+        }        
 
         static void ShowDossier(string[] listName, string[] listOfProfessions)
         {
@@ -83,7 +79,7 @@ namespace HomeWorkKadry
             Console.WriteLine();
         }
 
-        static void DeleteName(ref string[] listName, int deleteIndex)
+        static void DeleteName(ref string[] listName, ref string[] listOfProfessions, int deleteIndex)
         {
             string[] tempListName = new string[listName.Length - 1];
 
@@ -97,10 +93,7 @@ namespace HomeWorkKadry
                 tempListName[i - 1] = listName[i];
             }
             listName = tempListName;
-        }
 
-        static void DeleteProfessions(ref string[] listOfProfessions, int deleteIndex)
-        {
             string[] tempListOfProfessions = new string[listOfProfessions.Length - 1];
 
             for (int i = 0; i < deleteIndex; i++)
@@ -113,20 +106,20 @@ namespace HomeWorkKadry
                 tempListOfProfessions[i - 1] = listOfProfessions[i];
             }
             listOfProfessions = tempListOfProfessions;
-        }
+        }        
 
-        static void SearchSurname (string[] listName, string[] listOfProfessions)
+        static void SearchSurname(string[] listName, string[] listOfProfessions)
         {
             Console.WriteLine("Введите фамилию для поиска:");
             string surname = Console.ReadLine();
-            bool surnameIsFind = false; 
+            bool surnameIsFind = false;
             for (int i = 0; i < listName.Length; i++)
             {
-                if(surname.ToLower() == listName[i].ToLower())
+                if (surname.ToLower() == listName[i].ToLower())
                 {
                     Console.WriteLine($"{ i + 1}: { listName[i]} - { listOfProfessions[i]}");
                     surnameIsFind = true;
-                }                
+                }
             }
             if (surnameIsFind == false)
             {

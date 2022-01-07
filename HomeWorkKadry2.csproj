@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1215EC8-9E87-4C4A-8885-AA85B49697AF}</ProjectGuid>
+    <ProjectGuid>{1EF72123-C409-49A6-98EE-5A994794A330}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HomeWorkKadry</RootNamespace>
-    <AssemblyName>HomeWorkKadry</AssemblyName>
+    <RootNamespace>HomeWorkKadry2</RootNamespace>
+    <AssemblyName>HomeWorkKadry2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
