@@ -27,8 +27,7 @@ namespace HomeWorkKadry
                 switch (userInput)
                 {
                     case "1":
-                        AddListName(ref listName, ref listOfProfessions);
-                        
+                        AddListName(ref listName, ref listOfProfessions);                        
                         break;
                     case "2":
                         ShowDossier(listName, listOfProfessions);
